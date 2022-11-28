@@ -3,20 +3,6 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown.js")
 
-// inquirer.prompt(questions).then((answers) => {
-//   const template = `
-//         <div>
-//             <p>My favorite color is ${answers.color}</p>
-//             <p>Sushi like status: ${answers.sushi}</p>
-//             <p>Fancy pasta: ${answers.pasta}</p>
-//         </div>
-//     `;
-
-//   fs.writeFile("./output.html", template, () => {
-//     console.log("pizza is out the oven");
-//   });
-// });
-
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -28,7 +14,7 @@ const questions = [
     {
         type: "input",
         message: "What is your email?",
-        name: "user",
+        name: "email",
     },
 
     {
@@ -39,7 +25,7 @@ const questions = [
 
     {
         type: "input",
-        message: "Please write a short description of your project",
+        message: "Please write a short description of your project: ",
         name: "description",
     },
 
@@ -80,7 +66,7 @@ inquirer
     .prompt(questions)
     .then((answers) => {
         const readMeContent = generateMarkdown.generateMarkdown(answers)
-        fs.writeFile('README.md', readMeContent, (err) =>
+        fs.writeFile('./md/README.md', readMeContent, (err) =>
             err ? console.log(err) : console.log('Successfully created README!')
         );
     })

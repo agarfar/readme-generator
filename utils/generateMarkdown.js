@@ -1,8 +1,9 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
+  const licenseEdit = license.replaceAll(' ', '_')
   if (license !== 'None') {
-    return `![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)`;
+    return `![GitHub license](https://img.shields.io/badge/license-${licenseEdit}-blue.svg)`;
   }
   else {
     return '';
@@ -27,7 +28,7 @@ function renderLicenseSection(license) {
 }
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  const licenseBadge = renderLicenseLink(data.license)
+  const licenseBadge = renderLicenseBadge(data.license)
   const licenseSection = renderLicenseSection(data.license)
 
   return `#${data.title}
@@ -70,7 +71,7 @@ function generateMarkdown(data) {
   
   Github Profile: https://github.com/${data.user}
 
-  Please address all questions regarding this project to the following email: ${email}
+  Please address all questions regarding this project to the following email: ${data.email}
 
   `;
 }

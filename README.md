@@ -26,7 +26,7 @@ Before running 'node index.js' in the terminal, make sure you have installed inq
 
 Navigate to the repository in the terminal. Then, run 'node index.js' and answer the prompts. Upon completion, a README will be generated in the 'md' directory. 
 
-Watch the embedded video to see an example README output: 
+Watch the video at the provided link to see an example README output: https://drive.google.com/file/d/1kL8fYOibuPtPqx-TS8iBKl9nktoBBpeo/view
 
 ## License
 
@@ -43,3 +43,5 @@ No test instructions at this time.
 ## Questions
 
 Github Profile: https://github.com/agarfar
+
+Email: afarris538@gmail.com
